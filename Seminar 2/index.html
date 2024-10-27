@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHD</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css"
+    rel="stylesheet">
+  <!-- Css file  -->
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+  <!-- Navbar Section -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold ps-2" href="#">Logo</a>
+      <div class="d-flex align-items-center ms-auto">
+        <div class="position-relative me-3">
+          <i class="bi bi-bell fs-4"></i>
+          <span class="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle">3</span>
+        </div>
+        <div class="dropdown">
+          <a class="user-icon" href="#" id="dropdownUser" data-bs-toggle="dropdown">
+            <i class="bi bi-person-circle" style="font-size: 40px;"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+            <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Profile</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Heading Section -->
+  <div class="heading-section ps-3 p-0.5">
+    <h2 class="fw-bold text-dark mb-1">Seminar 2</h2>
+  </div>
+
+  <!-- Search and Button Section -->
+  <div class="search-section d-flex align-items-center justify-content-start p-3">
+    <div class="search-container position-relative me-3">
+      <input type="text" class="form-control search-input ps-5" placeholder="Search by Student ID">
+      <i class="bi bi-search search-icon position-absolute top-50 start-2 translate-middle-y ps-2"></i>
+    </div>
+    <button class="btn btn-primary load-button">Load</button>
+  </div>
+  <!-- Info and Status Section -->
+  <div class="info-status-container px-3 mb-3">
+    <div class="info-section custom-info-section text-white p-2 rounded mb-3">
+      <span class="fw-bold">Name :</span> Mr. X &nbsp;
+      <span class="fw-bold">Student ID :</span> 1111111 &nbsp;
+      <span class="fw-bold">Program :</span> PHD &nbsp;
+      <span class="fw-bold">Batch :</span> 1 &nbsp;
+      <span class="fw-bold">Session :</span> 2024-2025
+    </div>
+
+    <div class="status-section bg-light text-success p-2 rounded fw-bold mb-3">
+      This Student is ready for second Seminar.
+    </div>
+  </div>
+
+
+  <!-- Audit Check Section -->
+  <div class="audit-check-section p-3 rounded">
+    <h3 class="fw-bold">Audit Check Step 1</h3>
+    <table class="table audit-table">
+      <thead>
+        <tr style="background-color: #008080; color: white;">
+          <th style="width: 10%; text-align:center;">DOCUMENT</th>
+          <th style="width: 1%;"></th>
+          <th style="width: 7%;">APPROVED DATE</th>
+          <th style="width: 10%;">REMARKS</th>
+          <th style="width: 10%;"></th>
+          <th style="width: 25%;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align:center;">Doc 1</td>
+          <td style="text-align:center;">
+            <div class="form-check me-2">
+              <input class="form-check-input task-checkbox" type="checkbox">
+            </div>
+          </td>
+          <td>
+            <input type="text" class="form-control rounded-pill border-primary" value="10/12/2024"
+              style="max-width: 120px;">
+          </td>
+          <td>Not Donebhvhbvgibijbgibj</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;">Doc 2</td>
+          <td style="text-align:center;">
+            <div class="form-check me-2">
+              <input class="form-check-input task-checkbox" type="checkbox">
+            </div>
+          </td>
+          <td>
+            <div class="d-flex align-items-center">
+              <input type="text" class="form-control rounded-pill border-primary" value="10/12/2024"
+                style="max-width: 120px;">
+            </div>
+          </td>
+          <td>Not Donebhvhbvgibijbgibj</td>
+        </tr>
+        <tr>
+          <td style="text-align:center;">Doc 3</td>
+          <td style="text-align:center;">
+            <div class="form-check me-2">
+              <input class="form-check-input task-checkbox" type="checkbox">
+            </div>
+          </td>
+          <td>
+            <div class="d-flex align-items-center">
+              <input type="text" class="form-control rounded-pill border-primary" value="10/12/2024"
+                style="max-width: 120px;">
+            </div>
+          </td>
+          <td>Not Donebhvhbvgibijbgibj</td>
+          <td>
+            <button class="btn rounded-pill btn-success" style="width: 110px;">Save</button>
+          </td>
+          <td>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="checkAll" onclick="toggleAll(this)">
+              <label class="form-check-label" for="checkAll">All Complete</label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <!-- Upload Section -->
+  <div class="bg-light p-4 rounded mb-3">
+    <div class="row">
+      <!-- Proposal Upload Section -->
+      <div class="col-md-6">
+        <div class="upload-section">
+          <h5 class="text-dark text-center fw-bold">Proposal upload</h5>
+
+          <!-- Upload Box with Background -->
+          <div id="uploadBox" class="upload-box rounded p-4 text-center bg-white position-relative"
+            style="height: 200px; border: 1px dashed gray;">
+            <div class="icon-display" style="height: 120px;">
+              <i id="fileIcon" class="bi bi-cloud-arrow-up-fill" style="font-size: 6rem;"></i>
+            </div>
+            <label for="proposalUpload" class="fw-bold d-block text-dark mt-2">Drag & drop files or <a href="#"
+                id="browseLink">Browse</a></label>
+            <input type="file" id="proposalUpload" class="d-none" accept=".pdf,.doc,.docx">
+            <small class="text-muted d-block">Supported formats: PDF, Word</small>
+          </div>
+
+
+          <!-- Progress Bar -->
+          <div id="uploadProgress" class="upload-progress mt-3 d-flex justify-content-between align-items-center"
+            style="display: none;">
+            <div class="flex-grow-1 me-2">
+              <span id="fileName" class="fw-bold"></span>
+              <div class="progress mt-1">
+                <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                  aria-valuemin="0" aria-valuemax="100">0%</div>
+              </div>
+            </div>
+            <button id="cancelButton" class="btn btn-link text-danger" onclick="cancelUpload()">
+              <i id="cancelIcon" class="bi bi-x-circle" style="font-size: 1.5rem;"></i>
+            </button>
+          </div>
+
+          <!-- Uploaded Files List -->
+          <div class="uploaded-files mt-3" id="uploadedFileList">
+            <ul class="list-unstyled d-flex justify-content-between align-items-center" style="width: 80%;">
+              <li
+                class="d-flex justify-content-between align-items-center p-2 border rounded mb-2 bg-white flex-grow-1">
+                <span>1. Research_Proposal.PDF</span>
+                <small class="text-muted">14 Aug 2024</small>
+              </li>
+              <!-- Download & Delete Buttons -->
+              <div class="d-flex align-items-center">
+                <button class="btn btn-link text-primary me-2"><i class="bi bi-arrow-down-circle-fill"
+                    style="color: green;"></i></button>
+                <button class="btn btn-link text-danger"><i class="bi bi-trash3-fill"></i></button>
+              </div>
+            </ul>
+          </div>
+          <div class="uploaded-files mt-3">
+            <ul class="list-unstyled d-flex justify-content-between align-items-center" style="width: 80%;">
+              <li
+                class="d-flex justify-content-between align-items-center p-2 border rounded mb-2 bg-white flex-grow-1">
+                <span>2. Research_Proposal.PDF</span>
+                <small class="text-muted">14 Aug 2024</small>
+              </li>
+              <!-- Download & Delete Buttons -->
+              <div class="d-flex align-items-center">
+                <button class="btn btn-link text-primary me-2"><i class="bi bi-arrow-down-circle-fill"
+                    style="color: green;"></i></button>
+                <button class="btn btn-link text-danger"><i class="bi bi-trash3-fill"></i></button>
+              </div>
+            </ul>
+          </div>
+          <!-- Research Proposal Checkbox -->
+          <div class="form-check mt-3 d-flex align-items-center">
+            <label class="form-check-label me-2" for="proposalCheck">Research Proposal</label>
+            <input class="form-check-input" type="checkbox" id="proposalCheck" checked style="margin-left: 10px;">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Plagiarism Test Upload Section -->
+      <div class="col-md-6">
+        <div class="upload-section">
+          <h5 class="text-dark text-center fw-bold">Plag Test Reports upload</h5>
+          <!-- Upload Box with Background -->
+          <div id="plagUploadBox" class="upload-box rounded p-4 text-center bg-white position-relative"
+            style="height: 200px; border: 1px dashed gray;">
+            <div class="icon-display" style="height: 120px;">
+              <i id="fileIconPlag" class="bi bi-cloud-arrow-up-fill" style="font-size: 6rem;"></i>
+            </div>
+            <label for="plagUpload" class="fw-bold d-block text-dark mt-2">Drag & drop files or <a href="#"
+                id="browseLinkPlag">Browse</a></label>
+            <input type="file" id="plagUpload" class="d-none" accept=".jpeg,.jpg,.png,.pdf,.doc,.docx">
+            <small class="text-muted d-block">Supported formats: JPEG, PNG, PDF, Word</small>
+          </div>
+
+          <!-- Progress Bar -->
+          <div id="uploadProgressPlag" class="upload-progress mt-3 d-flex justify-content-between align-items-center"
+            style="display: none;">
+            <div class="flex-grow-1 me-2">
+              <span id="fileNamePlag" class="fw-bold"></span>
+              <div class="progress mt-1">
+                <div id="progressBarPlag" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                  aria-valuemin="0" aria-valuemax="100">0%</div>
+              </div>
+            </div>
+            <button id="cancelButtonPlag" class="btn btn-link text-danger" onclick="cancelUploadPlag()">
+              <i id="cancelIconPlag" class="bi bi-x-circle" style="font-size: 1.5rem;"></i>
+            </button>
+          </div>
+
+
+          <!-- Uploaded Files List -->
+          <div class="uploaded-files mt-3">
+            <ul class="list-unstyled d-flex justify-content-between align-items-center" style="width: 80%;">
+              <li
+                class="d-flex justify-content-between align-items-center p-2 border rounded mb-2 bg-white flex-grow-1">
+                <span>Test By: Self - document-name.PDF</span>
+                <small class="text-muted">14 Aug 2024</small>
+              </li>
+              <!-- Download & Delete Buttons -->
+              <div class="d-flex align-items-center">
+                <button class="btn btn-link text-primary me-2"><i class="bi bi-arrow-down-circle-fill"
+                    style="color: green;"></i></button>
+                <button class="btn btn-link text-danger"><i class="bi bi-trash3-fill"></i></button>
+              </div>
+            </ul>
+          </div>
+          <div class="uploaded-files mt-3">
+            <ul class="list-unstyled d-flex justify-content-between align-items-center" style="width: 80%;">
+              <li
+                class="d-flex justify-content-between align-items-center p-2 border rounded mb-2 bg-white flex-grow-1">
+                <span>Test By: Self - document-name.PDF</span>
+                <small class="text-muted">14 Aug 2024</small>
+              </li>
+              <!-- Download & Delete Buttons -->
+              <div class="d-flex align-items-center">
+                <button class="btn btn-link text-primary me-2"><i class="bi bi-arrow-down-circle-fill"
+                    style="color: green;"></i></button>
+                <button class="btn btn-link text-danger"><i class="bi bi-trash3-fill"></i></button>
+              </div>
+            </ul>
+          </div>
+
+          <!-- Plagiarism Test Report Checkbox -->
+          <div class="form-check mt-3 d-flex align-items-center">
+            <label class="form-check-label me-2" for="plagiarismCheck">Plagiarism Test Report</label>
+            <input class="form-check-input" type="checkbox" id="plagiarismCheck" checked style="margin-left: 10px;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Submission Button -->
+    <div class="text-end mt-4">
+      <button class="btn send-button rounded-pill px-4 py-2">Send for Re-submission</button>
+    </div>
+
+
+  </div>
+
+
+  <div class="container-fluid mt-3 px-4">
+    <div class="row align-items-center mb-2">
+      <div class="col-auto">
+        <label class="form-title fw-bold mb-0">
+          <h3>Set Strucutural Test Result:</h3>
+        </label>
+      </div>
+      <div class="col">
+        <div class="input-group">
+          <select class="form-select rounded-pill">
+            <option value="" disabled selected>OK/Not OK</option>
+            <option value="OK">OK</option>
+            <option value="Not OK">Not OK</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Seminar Section -->
+  <div class="container-fluid mt-5 px-4">
+    <div class="row align-items-center mb-2">
+      <div class="col-auto">
+        <label class="form-title fw-bold mb-0">
+          <h3>Add Seminar Details</h3>
+        </label>
+      </div>
+      <div class="col">
+        <div class="input-group">
+          <input type="text" class="form-control rounded-pill" placeholder="Seminar/Re-seminar">
+          <button class="btn add-button ms-2">+</button>
+        </div>
+      </div>
+      <div class="col-auto">
+        <button class="btn save-button">Save</button>
+      </div>
+    </div>
+    <small class="form-note">N.B: You can add Max 5 Panel Members for each seminar</small>
+  </div>
+
+
+  <div class="container mt-3 px-4">
+    <!-- The outer background div -->
+    <div class="background-wrapper">
+      <!-- The grid structure -->
+      <div class="grid-container">
+        <!-- Headers -->
+        <div class="grid-header">+ Date</div>
+        <div class="grid-header">+ Panel members</div>
+        <div class="grid-header">Comments</div>
+        <div class="grid-header">Online Certificate</div>
+        <div class="grid-header">Revised Proposal</div>
+        <div class="grid-header">Revision Status Sheet</div>
+
+        <!-- First Date Row -->
+        <div class="grid-item span-3">10/12/2024</div>
+        <div class="grid-item">MD. Rahim</div>
+        <div class="grid-item">hello test</div>
+        <!-- Online Certificate for the first date -->
+        <div class="grid-item span-3">
+          <button class="btn ">
+            <p class="icon-upload bi bi-file-earmark-arrow-up-fill"> <br>Upload</p>
+          </button> <br>
+          <button class="btn ">
+            <p class="icon-download bi bi-file-earmark-arrow-down-fill"> <br>Download</p>
+          </button>
+        </div>
+        <!-- Online Certificate for the first date -->
+        <div class="grid-item span-3">
+          <button class="btn ">
+            <p class="icon-upload bi bi-file-earmark-arrow-up-fill"> <br>Upload</p>
+          </button> <br>
+          <button class="btn ">
+            <p class="icon-download bi bi-file-earmark-arrow-down-fill"> <br>Download</p>
+          </button>
+        </div>
+        <!-- Online Certificate for the first date -->
+        <div class="grid-item span-3">
+          <button class="btn ">
+            <p class="icon-upload bi bi-file-earmark-arrow-up-fill"> <br>Upload</p>
+          </button> <br>
+          <button class="btn ">
+            <p class="icon-download bi bi-file-earmark-arrow-down-fill"> <br>Download</p>
+          </button>
+        </div>
+
+
+        <div class="grid-item">MD. Abu Sayed</div>
+        <div class="grid-item">hello test</div>
+
+        <div class="grid-item">MD. Karim</div>
+        <div class="grid-item">hello test</div>
+
+        <!-- Second Date Row -->
+        <div class="grid-item span-3">31/12/2024</div>
+        <div class="grid-item">MD. Mugdho</div>
+        <div class="grid-item">Poor</div>
+
+        <!-- Online Certificate for the first date -->
+        <div class="grid-item span-3">
+          <button class="btn ">
+            <p class="icon-upload bi bi-file-earmark-arrow-up-fill"> <br>Upload</p>
+          </button> <br>
+          <button class="btn ">
+            <p class="icon-download bi bi-file-earmark-arrow-down-fill"> <br>Download</p>
+          </button>
+        </div>
+        <!-- Online Certificate for the second date -->
+        <div class="grid-item span-3">
+          <button class="btn ">
+            <p class="icon-upload bi bi-file-earmark-arrow-up-fill"> <br>Upload</p>
+          </button> <br>
+          <button class="btn ">
+            <p class="icon-download bi bi-file-earmark-arrow-down-fill"> <br>Download</p>
+          </button>
+        </div>
+
+        <!-- Online Certificate for the second date -->
+        <div class="grid-item span-3">
+          <button class="btn ">
+            <p class="icon-upload bi bi-file-earmark-arrow-up-fill" style="color: green;"> <br>Upload</p>
+          </button> <br>
+          <button class="btn ">
+            <p class="icon-download bi bi-file-earmark-arrow-down-fill" style="color: rgb(58, 19, 232);"> <br>Download
+            </p>
+          </button>
+        </div>
+
+        <div class="grid-item">MD. Abu Sayed</div>
+        <div class="grid-item">Good</div>
+
+        <div class="grid-item">MD. Irfan</div>
+        <div class="grid-item">Excellent</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="content-box p-4">
+      <h5>Page Title: Seminar Promotion Step 9</h5>
+      <button class="btn btn-custom mt-4" onclick="promoteSeminar()">Promote To Seminar II</button>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
